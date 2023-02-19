@@ -34,15 +34,18 @@ const Products = () => {
                 </Slider>
             </div>
             <div className='col-span-3'>
-                <div className="flex items-end justify-between">
+                <div className="flex items-end justify-between mb-4">
                     <h2 className='text-lg font-medium'>Daily Deals</h2>
                     <h2 className='font-medium'>View All</h2>
                 </div>
-                <div className="grid grid-cols-1">
-                    {/* {products.map(p => <div>
-                        <img className='w-4 h-4 rounded-full mr-3' src={p.picture} alt="" />
-                        <p>{p.name} <span >price:{p.price}</span></p>
-                    </div>)} */}
+                <div className="grid grid-cols-1 gap-5">
+                    {products.map(p => <div className='flex'>
+                        <img className='w-5 h-5 rounded-full mr-3' src={p.picture} alt="" />
+                        <div>
+                            <p className='font-semibold'>{p.name} <span className='text-xs font-medium'>price:{p.price}</span></p>
+                            <span className='text-xs font-medium'>reveiw : {p.reveiw} & orders : {p.order}</span>
+                        </div>
+                    </div>)}
                 </div>
             </div>
         </div>
