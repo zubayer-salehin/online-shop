@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from "../assets/logo/download (8) 1.png"
-import { AiOutlineHome, AiOutlineShoppingCart, AiOutlineHistory, AiOutlineContacts,AiOutlineSetting } from "react-icons/ai";
+import frame from "../assets/frame/Frame 2.png"
+import { AiOutlineHome, AiOutlineShoppingCart, AiOutlineHistory, AiOutlineContacts, AiOutlineSetting } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { MdOutlineExplore } from "react-icons/md";
 import { FaRegHeart, FaSellcast } from "react-icons/fa";
@@ -64,13 +65,16 @@ const SideMenu = () => {
                 <h3 className='ml-4 text-lg text-secondary'>MK Sounds</h3>
             </div>
             <ul className='ml-7 text-secondary'>
-                {menus.map(menu => <li className='flex gap-6 items-center mb-6'>
+                {menus.map(menu => <li key={Math.random()*100} className='flex gap-6 items-center mb-6'>
                     <div className='text-lg'>
                         {menu.icon}
                     </div>
                     <Link to={menu.path}>{menu.name}</Link>
                 </li>)}
             </ul>
+            <div className='pt-5 ml-2.5 mr-1.5 mb-5'>
+                <img src={frame} alt="" />
+            </div>
         </div>
     );
 };
